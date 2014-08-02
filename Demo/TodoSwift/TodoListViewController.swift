@@ -168,11 +168,6 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         return true
     }
     
-    func tableView(tableView: UITableView!, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath!) -> String!
-    {
-        return "Delete"
-    }
-    
     func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle
     {
         return UITableViewCellEditingStyle.Delete
@@ -242,8 +237,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath)
     {
-        switch type
-            {
+        switch type {
         case NSFetchedResultsChangeType.Insert:
             self.tableView.insertRowsAtIndexPaths([ newIndexPath ], withRowAnimation: UITableViewRowAnimation.Fade)
         case NSFetchedResultsChangeType.Delete:
@@ -270,6 +264,8 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func cellDidToggleCompletion(cell: TodoCell)
     {
+        // FIXME: indexPathForCell() only works if cell is visible, possible crash if you scroll the cell out of the screen
+        
         // Retrieve index path
         let indexPath = self.tableView.indexPathForCell(cell)
         
@@ -366,8 +362,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     private class func animationOptionCurve(fromAnimationCurve curve: UIViewAnimationCurve) -> UIViewAnimationOptions
     {
-        switch (curve)
-            {
+        switch (curve) {
         case UIViewAnimationCurve.EaseInOut:
             return UIViewAnimationOptions.CurveEaseInOut;
         case UIViewAnimationCurve.EaseIn:
