@@ -192,7 +192,8 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {
-        let enteredString = textField.text
+        // Trim entered string
+        let enteredString = textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
         // Create a task if entered string is not empty
         if enteredString.utf16Count > 0
@@ -282,8 +283,21 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Update related task and save
         var task = self.frc!.objectAtIndexPath(indexPath) as Task
-        task.label = newContent
-        task.managedObjectContext.save(nil)
+        
+        // Trim content
+        let trimmedContent = newContent.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        // Delete task if content is empty, update it otherwise
+        if trimmedContent.utf16Count == 0
+        {
+            appDelegate.managedObjectContext?.deleteObject(task)
+            appDelegate.managedObjectContext?.save(nil)
+        }
+        else
+        {
+            task.label = trimmedContent
+            task.managedObjectContext.save(nil)
+        }
     }
     
     // MARK: - UI Actions
