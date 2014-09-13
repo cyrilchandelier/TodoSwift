@@ -30,6 +30,7 @@
 		F115F948198CF4370070F975 /* clear_picto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear_picto@2x.png"; sourceTree = "<group>"; };
 		F115F94B198D55F90070F975 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		F115F94C198D55F90070F975 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		F14FD04C19C4F27C00B2A5EC /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512.png; sourceTree = "<group>"; };
 		F15026C5198A38C600F9920D /* TodoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15026C9198A38C600F9920D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F15026CA198A38C600F9920D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 				F115F94C198D55F90070F975 /* background.png */,
 				F115F947198CF4370070F975 /* clear_picto.png */,
 				F115F948198CF4370070F975 /* clear_picto@2x.png */,
+				F14FD04C19C4F27C00B2A5EC /* icon_512.png */,
 				F15026ED198A392900F9920D /* Images.xcassets */,
 			);
 			path = Images;
