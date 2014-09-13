@@ -14,6 +14,15 @@
 		F115F94E198D55F90070F975 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F115F94C198D55F90070F975 /* background.png */; };
 		F115F94F198D68950070F975 /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F115F945198CD0FF0070F975 /* TodoCell.xib */; };
 		F14FD05019C4F58500B2A5EC /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FD04F19C4F58500B2A5EC /* TaskManager.swift */; };
+		F14FD06119C4FB0400B2A5EC /* TaskManagerCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FD06019C4FB0400B2A5EC /* TaskManagerCase.swift */; };
+		F14FD06219C4FD9800B2A5EC /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FD04F19C4F58500B2A5EC /* TaskManager.swift */; };
+		F14FD06319C4FDB300B2A5EC /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = F15026FB198A39ED00F9920D /* Task.m */; };
+		F14FD06419C4FDC100B2A5EC /* Task+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F15026FF198A3AB700F9920D /* Task+Utils.m */; };
+		F14FD06519C4FDC800B2A5EC /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1502701198A3ECD00F9920D /* TodoListViewController.swift */; };
+		F14FD06619C4FDC800B2A5EC /* TodoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F115F942198CCF7C0070F975 /* TodoListViewController.xib */; };
+		F14FD06719C4FDCC00B2A5EC /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17109AF198AD2B800715B32 /* TodoCell.swift */; };
+		F14FD06819C4FDCC00B2A5EC /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F115F945198CD0FF0070F975 /* TodoCell.xib */; };
+		F14FD06919C4FDD100B2A5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15026CA198A38C600F9920D /* AppDelegate.swift */; };
 		F15026CB198A38C600F9920D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15026CA198A38C600F9920D /* AppDelegate.swift */; };
 		F15026F3198A392900F9920D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15026ED198A392900F9920D /* Images.xcassets */; };
 		F15026F4198A392900F9920D /* TodoSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F15026F0198A392900F9920D /* TodoSwift.xcdatamodeld */; };
@@ -24,6 +33,16 @@
 		F17109B0198AD2B800715B32 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17109AF198AD2B800715B32 /* TodoCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F14FD05B19C4FAAC00B2A5EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F115F942198CCF7C0070F975 /* TodoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoListViewController.xib; sourceTree = "<group>"; };
 		F115F945198CD0FF0070F975 /* TodoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
@@ -33,11 +52,12 @@
 		F115F94C198D55F90070F975 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		F14FD04C19C4F27C00B2A5EC /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512.png; sourceTree = "<group>"; };
 		F14FD04F19C4F58500B2A5EC /* TaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		F14FD05519C4FAAC00B2A5EC /* TodoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14FD05819C4FAAC00B2A5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F14FD06019C4FB0400B2A5EC /* TaskManagerCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManagerCase.swift; sourceTree = "<group>"; };
 		F15026C5198A38C600F9920D /* TodoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15026C9198A38C600F9920D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F15026CA198A38C600F9920D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F15026DF198A38C600F9920D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F15026E0198A38C600F9920D /* TodoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSwiftTests.swift; sourceTree = "<group>"; };
 		F15026ED198A392900F9920D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F15026F1198A392900F9920D /* TodoSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoSwift.xcdatamodel; sourceTree = "<group>"; };
 		F15026F9198A39EC00F9920D /* TodoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -51,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F14FD05219C4FAAC00B2A5EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F15026C2198A38C600F9920D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,12 +105,29 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
+		F14FD05619C4FAAC00B2A5EC /* TodoSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				F14FD06019C4FB0400B2A5EC /* TaskManagerCase.swift */,
+				F14FD05719C4FAAC00B2A5EC /* Supporting Files */,
+			);
+			path = TodoSwiftTests;
+			sourceTree = "<group>";
+		};
+		F14FD05719C4FAAC00B2A5EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F14FD05819C4FAAC00B2A5EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F15026BC198A38C600F9920D = {
 			isa = PBXGroup;
 			children = (
 				F15026C7198A38C600F9920D /* TodoSwift */,
 				F15026EA198A392900F9920D /* Resources */,
-				F15026DD198A38C600F9920D /* TodoSwiftTests */,
+				F14FD05619C4FAAC00B2A5EC /* TodoSwiftTests */,
 				F15026C6198A38C600F9920D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				F15026C5198A38C600F9920D /* TodoSwift.app */,
+				F14FD05519C4FAAC00B2A5EC /* TodoSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,23 +157,6 @@
 			children = (
 				F15026F9198A39EC00F9920D /* TodoSwift-Bridging-Header.h */,
 				F15026C9198A38C600F9920D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F15026DD198A38C600F9920D /* TodoSwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				F15026E0198A38C600F9920D /* TodoSwiftTests.swift */,
-				F15026DE198A38C600F9920D /* Supporting Files */,
-			);
-			path = TodoSwiftTests;
-			sourceTree = "<group>";
-		};
-		F15026DE198A38C600F9920D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F15026DF198A38C600F9920D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,6 +266,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F14FD05419C4FAAC00B2A5EC /* TodoSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14FD05D19C4FAAC00B2A5EC /* Build configuration list for PBXNativeTarget "TodoSwiftTests" */;
+			buildPhases = (
+				F14FD05119C4FAAC00B2A5EC /* Sources */,
+				F14FD05219C4FAAC00B2A5EC /* Frameworks */,
+				F14FD05319C4FAAC00B2A5EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F14FD05C19C4FAAC00B2A5EC /* PBXTargetDependency */,
+			);
+			name = TodoSwiftTests;
+			productName = TodoSwiftTests;
+			productReference = F14FD05519C4FAAC00B2A5EC /* TodoSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F15026C4198A38C600F9920D /* TodoSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F15026E4198A38C600F9920D /* Build configuration list for PBXNativeTarget "TodoSwift" */;
@@ -264,6 +310,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Cyril Chandelier";
 				TargetAttributes = {
+					F14FD05419C4FAAC00B2A5EC = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F15026C4198A38C600F9920D;
+					};
 					F15026C4198A38C600F9920D = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -283,11 +333,21 @@
 			projectRoot = "";
 			targets = (
 				F15026C4198A38C600F9920D /* TodoSwift */,
+				F14FD05419C4FAAC00B2A5EC /* TodoSwiftTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F14FD05319C4FAAC00B2A5EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14FD06619C4FDC800B2A5EC /* TodoListViewController.xib in Resources */,
+				F14FD06819C4FDCC00B2A5EC /* TodoCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F15026C3198A38C600F9920D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +366,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F14FD05119C4FAAC00B2A5EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14FD06219C4FD9800B2A5EC /* TaskManager.swift in Sources */,
+				F14FD06719C4FDCC00B2A5EC /* TodoCell.swift in Sources */,
+				F14FD06319C4FDB300B2A5EC /* Task.m in Sources */,
+				F14FD06419C4FDC100B2A5EC /* Task+Utils.m in Sources */,
+				F14FD06919C4FDD100B2A5EC /* AppDelegate.swift in Sources */,
+				F14FD06119C4FB0400B2A5EC /* TaskManagerCase.swift in Sources */,
+				F14FD06519C4FDC800B2A5EC /* TodoListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F15026C1198A38C600F9920D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +396,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F14FD05C19C4FAAC00B2A5EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F14FD05B19C4FAAC00B2A5EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F1502707198A3F4D00F9920D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -334,6 +416,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F14FD05E19C4FAAC00B2A5EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TodoSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoSwift/TodoSwift-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoSwift.app/TodoSwift";
+			};
+			name = Debug;
+		};
+		F14FD05F19C4FAAC00B2A5EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TodoSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoSwift/TodoSwift-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoSwift.app/TodoSwift";
+			};
+			name = Release;
+		};
 		F15026E2198A38C600F9920D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -443,6 +559,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F14FD05D19C4FAAC00B2A5EC /* Build configuration list for PBXNativeTarget "TodoSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14FD05E19C4FAAC00B2A5EC /* Debug */,
+				F14FD05F19C4FAAC00B2A5EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F15026C0198A38C600F9920D /* Build configuration list for PBXProject "TodoSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

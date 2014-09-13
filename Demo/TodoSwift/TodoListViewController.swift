@@ -117,9 +117,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     func refreshTableFooterView()
     {
         // Query only active tasks
-        let fetchRequest = NSFetchRequest(entityName: TASK_ENTITY_NAME)
-        fetchRequest.predicate = Task.activePredicate()
-        let itemsCount = appDelegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)!.count
+        let itemsCount = TaskManager.sharedInstance.taskList(Task.activePredicate())!.count
         
         // Build attributed string
         var itemsCountString = NSMutableAttributedString()

@@ -95,4 +95,14 @@ class TaskManager
         // Save changes
         appDelegate.managedObjectContext?.save(nil)
     }
+    
+    // Return the filtered task list
+    func taskList(predicate: NSPredicate?) -> [AnyObject]?
+    {
+        let fetchRequest = NSFetchRequest(entityName: TASK_ENTITY_NAME)
+        fetchRequest.predicate = predicate
+        let items = appDelegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)
+        
+        return items
+    }
 }
