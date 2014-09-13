@@ -27,11 +27,24 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Initializers
     
-    init()
+    override init()
     {
-        // Super
         super.init(nibName: "TodoListViewController", bundle: nil)
         
+        // Setup
+        setup()
+    }
+
+    required init(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        
+        // Setup
+        setup()
+    }
+    
+    func setup()
+    {
         // Initialize data variables
         self.refreshData()
         
@@ -75,7 +88,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         fetchRequest.predicate = self.predicate
         
         // Create FRC
-        frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         
         // Configure frc delegate
         frc!.delegate = self
@@ -106,7 +119,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         // Query only active tasks
         let fetchRequest = NSFetchRequest(entityName: TASK_ENTITY_NAME)
         fetchRequest.predicate = Task.activePredicate()
-        let itemsCount = appDelegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: nil).count
+        let itemsCount = appDelegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)!.count
         
         // Build attributed string
         var itemsCountString = NSMutableAttributedString()
@@ -126,18 +139,18 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - UITableViewSource methods
     
-    func numberOfSectionsInTableView(tableView: UITableView!) -> Int
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return frc!.sections.count
+        return frc!.sections!.count
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let sectionInfo = frc!.sections[section] as NSFetchedResultsSectionInfo
+        let sectionInfo = frc!.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier(TodoCellId) as TodoCell
         cell.delegate = self
@@ -147,13 +160,13 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - UITableViewDelegate methods
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         let task = frc!.objectAtIndexPath(indexPath) as Task
         return TodoCell.cellHeightForTask(task)
     }
     
-    func tableView(tableView: UITableView!, willDisplayCell cell: UITableViewCell!, forRowAtIndexPath indexPath: NSIndexPath!)
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
     {
         // Retrieve task
         let task = frc!.objectAtIndexPath(indexPath) as Task
@@ -163,17 +176,17 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         castedCell.configureWithTask(task)
     }
     
-    func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         return true
     }
     
-    func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle
     {
         return UITableViewCellEditingStyle.Delete
     }
     
-    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!)
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!)
     {
         if editingStyle == UITableViewCellEditingStyle.Delete
         {
@@ -199,7 +212,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         if enteredString.utf16Count > 0
         {
             // Create task
-            var task: Task = NSEntityDescription.insertNewObjectForEntityForName(TASK_ENTITY_NAME, inManagedObjectContext: appDelegate.managedObjectContext) as Task
+            var task: Task = NSEntityDescription.insertNewObjectForEntityForName(TASK_ENTITY_NAME, inManagedObjectContext: appDelegate.managedObjectContext!) as Task
             task.createdAt = NSDate()
             task.completed = false
             task.label = textField.text
@@ -269,34 +282,38 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Retrieve index path
         let indexPath = self.tableView.indexPathForCell(cell)
-        
-        // Update related task and save
-        var task = self.frc!.objectAtIndexPath(indexPath) as Task
-        task.completed = !task.completed.boolValue
-        task.managedObjectContext.save(nil)
+        if (indexPath != nil)
+        {
+            // Update related task and save
+            var task = self.frc!.objectAtIndexPath(indexPath!) as Task
+            task.completed = !task.completed.boolValue
+            task.managedObjectContext.save(nil)
+        }
     }
     
     func cellDidEditTaskContent(cell: TodoCell, newContent: String)
     {
         // Retrieve index path
         let indexPath = self.tableView.indexPathForCell(cell)
-        
-        // Update related task and save
-        var task = self.frc!.objectAtIndexPath(indexPath) as Task
-        
-        // Trim content
-        let trimmedContent = newContent.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        
-        // Delete task if content is empty, update it otherwise
-        if trimmedContent.utf16Count == 0
+        if (indexPath != nil)
         {
-            appDelegate.managedObjectContext?.deleteObject(task)
-            appDelegate.managedObjectContext?.save(nil)
-        }
-        else
-        {
-            task.label = trimmedContent
-            task.managedObjectContext.save(nil)
+            // Update related task and save
+            var task = self.frc!.objectAtIndexPath(indexPath!) as Task
+            
+            // Trim content
+            let trimmedContent = newContent.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            
+            // Delete task if content is empty, update it otherwise
+            if trimmedContent.utf16Count == 0
+            {
+                appDelegate.managedObjectContext?.deleteObject(task)
+                appDelegate.managedObjectContext?.save(nil)
+            }
+            else
+            {
+                task.label = trimmedContent
+                task.managedObjectContext.save(nil)
+            }
         }
     }
     
@@ -341,7 +358,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Notifications
     func keyboardAnimation(notification: NSNotification)
     {
-        let userInfo = notification.userInfo
+        let userInfo = notification.userInfo!
         
         // Get keyboard size
         let beginFrameValue = userInfo[UIKeyboardFrameBeginUserInfoKey] as NSValue
