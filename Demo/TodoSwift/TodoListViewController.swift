@@ -193,11 +193,8 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
             // Retrieve task
             let task = self.frc!.objectAtIndexPath(indexPath) as Task
             
-            // Delete it from managed object context
-            appDelegate.managedObjectContext?.deleteObject(task)
-            
-            // Save managed object context
-            appDelegate.managedObjectContext?.save(nil)
+            // Delete task
+            TaskManager.sharedInstance.deleteTask(task)
         }
     }
     
@@ -212,13 +209,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         if enteredString.utf16Count > 0
         {
             // Create task
-            var task: Task = NSEntityDescription.insertNewObjectForEntityForName(TASK_ENTITY_NAME, inManagedObjectContext: appDelegate.managedObjectContext!) as Task
-            task.createdAt = NSDate()
-            task.completed = false
-            task.label = textField.text
-            
-            // Save managed object context
-            appDelegate.managedObjectContext?.save(nil)
+            TaskManager.sharedInstance.createTask(enteredString)
             
             // Reset textfield
             textField.text = ""
@@ -286,8 +277,9 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         {
             // Update related task and save
             var task = self.frc!.objectAtIndexPath(indexPath!) as Task
-            task.completed = !task.completed.boolValue
-            task.managedObjectContext.save(nil)
+            
+            // Toggle task
+            TaskManager.sharedInstance.toggleTask(task)
         }
     }
     
@@ -300,20 +292,8 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
             // Update related task and save
             var task = self.frc!.objectAtIndexPath(indexPath!) as Task
             
-            // Trim content
-            let trimmedContent = newContent.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-            
-            // Delete task if content is empty, update it otherwise
-            if trimmedContent.utf16Count == 0
-            {
-                appDelegate.managedObjectContext?.deleteObject(task)
-                appDelegate.managedObjectContext?.save(nil)
-            }
-            else
-            {
-                task.label = trimmedContent
-                task.managedObjectContext.save(nil)
-            }
+            // Update task
+            TaskManager.sharedInstance.updateTask(task, content: newContent)
         }
     }
     
@@ -338,21 +318,8 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func clearCompleted()
     {
-        // Build a fetch request to retrieve completed task
-        let fetchRequest = NSFetchRequest(entityName: TASK_ENTITY_NAME)
-        fetchRequest.predicate = Task.completedPredicate()
-        
-        // Perform query
-        let tasks = appDelegate.managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
-        
-        // Loop over task to delete them
-        for task in tasks as [Task]
-        {
-            appDelegate.managedObjectContext?.deleteObject(task)
-        }
-        
-        // Save changes
-        appDelegate.managedObjectContext?.save(nil)
+        // Clear completed tasks
+        TaskManager.sharedInstance.clearCompletedTasks()
     }
     
     // MARK: - Notifications
