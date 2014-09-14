@@ -31,13 +31,20 @@ class TaskController
     }
     
     // Create a task with given content
-    func createTask(content: String) -> Task
+    func createTask(content: String) -> Task?
     {
+        // Trim content
+        let trimmedContent = content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        if trimmedContent == ""
+        {
+            return nil
+        }
+        
         // Create task
         var task: Task = NSEntityDescription.insertNewObjectForEntityForName(TaskEntityName, inManagedObjectContext: CoreDataController.sharedInstance.managedObjectContext!) as Task
         task.createdAt = NSDate()
         task.completed = false
-        task.label = content
+        task.label = trimmedContent
         
         // Save managed object context
         CoreDataController.sharedInstance.managedObjectContext?.save(nil)
@@ -87,17 +94,23 @@ class TaskController
     // Clear completed task
     func clearCompletedTasks()
     {
+        self.clearTasks(Task.completedPredicate())
+    }
+    
+    // Clear tasks
+    func clearTasks(predicate: NSPredicate?)
+    {
         // Build a fetch request to retrieve completed task
         let fetchRequest = NSFetchRequest(entityName: TaskEntityName)
-        fetchRequest.predicate = Task.completedPredicate()
+        fetchRequest.predicate = predicate
         
         // Perform query
         let tasks = CoreDataController.sharedInstance.managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
         
         // Loop over task to delete them
-        for task in tasks as [Task]
+        for task in tasks!
         {
-            CoreDataController.sharedInstance.managedObjectContext?.deleteObject(task)
+            CoreDataController.sharedInstance.managedObjectContext?.deleteObject(task as NSManagedObject)
         }
         
         // Save changes

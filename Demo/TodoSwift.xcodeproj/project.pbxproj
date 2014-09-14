@@ -37,6 +37,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F1248C4019C6282E00A27ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
+		F1248C4219C6283800A27ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
+		F1248C4419C628ED00A27ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
+		F1248C4619C6290400A27ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
+		F1248C4819C6290400A27ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
+		F1248C4A19C6290500A27ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15026BD198A38C600F9920D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15026C4198A38C600F9920D;
+			remoteInfo = TodoSwift;
+		};
 		F14FD05B19C4FAAC00B2A5EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F15026BD198A38C600F9920D /* Project object */;
@@ -279,6 +321,12 @@
 			);
 			dependencies = (
 				F14FD05C19C4FAAC00B2A5EC /* PBXTargetDependency */,
+				F1248C4119C6282E00A27ACC /* PBXTargetDependency */,
+				F1248C4319C6283800A27ACC /* PBXTargetDependency */,
+				F1248C4519C628ED00A27ACC /* PBXTargetDependency */,
+				F1248C4719C6290400A27ACC /* PBXTargetDependency */,
+				F1248C4919C6290400A27ACC /* PBXTargetDependency */,
+				F1248C4B19C6290500A27ACC /* PBXTargetDependency */,
 			);
 			name = TodoSwiftTests;
 			productName = TodoSwiftTests;
@@ -401,6 +449,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F1248C4119C6282E00A27ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F1248C4019C6282E00A27ACC /* PBXContainerItemProxy */;
+		};
+		F1248C4319C6283800A27ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F1248C4219C6283800A27ACC /* PBXContainerItemProxy */;
+		};
+		F1248C4519C628ED00A27ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F1248C4419C628ED00A27ACC /* PBXContainerItemProxy */;
+		};
+		F1248C4719C6290400A27ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F1248C4619C6290400A27ACC /* PBXContainerItemProxy */;
+		};
+		F1248C4919C6290400A27ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F1248C4819C6290400A27ACC /* PBXContainerItemProxy */;
+		};
+		F1248C4B19C6290500A27ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15026C4198A38C600F9920D /* TodoSwift */;
+			targetProxy = F1248C4A19C6290500A27ACC /* PBXContainerItemProxy */;
+		};
 		F14FD05C19C4FAAC00B2A5EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F15026C4198A38C600F9920D /* TodoSwift */;
@@ -423,6 +501,7 @@
 		F14FD05E19C4FAAC00B2A5EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -442,6 +521,7 @@
 		F14FD05F19C4FAAC00B2A5EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

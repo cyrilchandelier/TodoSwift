@@ -34,7 +34,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         // Setup
         setup()
     }
-
+    
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
@@ -200,15 +200,12 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {
-        // Trim entered string
-        let enteredString = textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        // Create task
+        let task = TaskController.sharedInstance.createTask(textField.text)
         
         // Create a task if entered string is not empty
-        if enteredString.utf16Count > 0
+        if task != nil
         {
-            // Create task
-            TaskController.sharedInstance.createTask(enteredString)
-            
             // Reset textfield
             textField.text = ""
         }

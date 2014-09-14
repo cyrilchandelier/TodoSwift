@@ -18,7 +18,7 @@ let TaskLabelAttribute      = "label"
 
 
 
-extension Task
+extension Task: Equatable
 {
     
     // MARK: Sort descriptors
@@ -41,4 +41,9 @@ extension Task
     {
         return NSPredicate(format: "%K == %@", TaskCompletedAttribute, true)
     }
+}
+
+func == (lhs: Task, rhs: Task) -> Bool
+{
+    return lhs.createdAt == rhs.createdAt && lhs.label == rhs.label
 }
