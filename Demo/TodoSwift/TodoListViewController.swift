@@ -83,12 +83,12 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     func refreshData()
     {
         // Prepare fetch request
-        let fetchRequest = NSFetchRequest(entityName: TASK_ENTITY_NAME)
+        let fetchRequest = NSFetchRequest(entityName: TaskEntityName)
         fetchRequest.sortDescriptors = Task.sortDescriptors()
         fetchRequest.predicate = self.predicate
         
         // Create FRC
-        frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataController.sharedInstance.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         
         // Configure frc delegate
         frc!.delegate = self
@@ -117,7 +117,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     func refreshTableFooterView()
     {
         // Query only active tasks
-        let itemsCount = TaskManager.sharedInstance.taskList(Task.activePredicate())!.count
+        let itemsCount = TaskController.sharedInstance.taskList(Task.activePredicate())!.count
         
         // Build attributed string
         var itemsCountString = NSMutableAttributedString()
@@ -192,7 +192,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
             let task = self.frc!.objectAtIndexPath(indexPath) as Task
             
             // Delete task
-            TaskManager.sharedInstance.deleteTask(task)
+            TaskController.sharedInstance.deleteTask(task)
         }
     }
     
@@ -207,7 +207,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         if enteredString.utf16Count > 0
         {
             // Create task
-            TaskManager.sharedInstance.createTask(enteredString)
+            TaskController.sharedInstance.createTask(enteredString)
             
             // Reset textfield
             textField.text = ""
@@ -277,7 +277,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
             var task = self.frc!.objectAtIndexPath(indexPath!) as Task
             
             // Toggle task
-            TaskManager.sharedInstance.toggleTask(task)
+            TaskController.sharedInstance.toggleTask(task)
         }
     }
     
@@ -291,7 +291,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
             var task = self.frc!.objectAtIndexPath(indexPath!) as Task
             
             // Update task
-            TaskManager.sharedInstance.updateTask(task, content: newContent)
+            TaskController.sharedInstance.updateTask(task, content: newContent)
         }
     }
     
@@ -317,7 +317,7 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func clearCompleted()
     {
         // Clear completed tasks
-        TaskManager.sharedInstance.clearCompletedTasks()
+        TaskController.sharedInstance.clearCompletedTasks()
     }
     
     // MARK: - Notifications
