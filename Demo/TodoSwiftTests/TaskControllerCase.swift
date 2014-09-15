@@ -11,6 +11,26 @@ import XCTest
 
 
 
+class TaskControllerSingletonCase: XCTestCase
+{
+    func testSingletonSharedInstanceCreated()
+    {
+        XCTAssertNotNil(TaskController.sharedInstance, "An instance of TaskController class should have been created")
+    }
+    
+    func testSharedInstanceIsUnique()
+    {
+        let taskControllerOne = TaskController.sharedInstance
+        let taskControllerTwo = TaskController.sharedInstance
+        let taskControllerThree = TaskController()
+        
+        XCTAssert(taskControllerOne === taskControllerTwo, "Shared instance controllers called twice should return the same instance")
+        XCTAssert(taskControllerOne !== taskControllerThree, "Separately created task controller should not be equal to shared instance")
+    }
+}
+
+
+
 class TaskControllerCase: XCTestCase
 {
     override func setUp()
@@ -29,24 +49,17 @@ class TaskControllerCase: XCTestCase
         super.tearDown()
     }
     
-    func testSingletonSharedInstanceCreated()
-    {
-        XCTAssertNotNil(TaskController.sharedInstance, "An instance of TaskController class should have been created")
-    }
-    
     func testTaskClearing()
     {
         // Insert a task
         TaskController.sharedInstance.createTask("foo")
         TaskController.sharedInstance.createTask("bar")
-        var taskList = TaskController.sharedInstance.taskList(nil)
-        XCTAssertEqual(taskList!.count, 2, "Task list should contain 2 tasks")
         
         // Clear tasks
         TaskController.sharedInstance.clearTasks(nil)
         
         // Ensure task list is empty
-        taskList = TaskController.sharedInstance.taskList(nil)
+        let taskList = TaskController.sharedInstance.taskList(nil)
         XCTAssertEqual(taskList!.count, 0, "Task list should not contain any task")
     }
     
@@ -76,15 +89,11 @@ class TaskControllerCase: XCTestCase
         // Insert a task
         let task = TaskController.sharedInstance.createTask("foo")
         
-        // Validate that there is an item in task list
-        var taskList = TaskController.sharedInstance.taskList(nil)
-        XCTAssertEqual(taskList!.count, 1, "Task list should contain 1 task")
-        
         // Delete task
         TaskController.sharedInstance.deleteTask(task!)
         
         // Ensure it was deleted
-        taskList = TaskController.sharedInstance.taskList(nil)
+        let taskList = TaskController.sharedInstance.taskList(nil)
         XCTAssertEqual(taskList!.count, 0, "Task list should not contain any task")
     }
     
@@ -129,12 +138,10 @@ class TaskControllerCase: XCTestCase
         
         // Create a task to be updated
         let task = TaskController.sharedInstance.createTask("foo")
-        var taskList = TaskController.sharedInstance.taskList(nil)
-        XCTAssertEqual(taskList!.count, 1, "Task list should contain 1 task")
         
         // Test that task is deleted if label is empty
         TaskController.sharedInstance.updateTask(task!, content: label)
-        taskList = TaskController.sharedInstance.taskList(nil)
+        let taskList = TaskController.sharedInstance.taskList(nil)
         XCTAssertEqual(taskList!.count, 0, "Task list should not contain any task")
     }
 }

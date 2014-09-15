@@ -14,16 +14,13 @@ import CoreData
 class TaskController
 {
     // Shared instance
-    class var sharedInstance: TaskController
-    {
-        struct Static
-        {
-            static var instance: TaskController?
-            static var token: dispatch_once_t = 0
+    class var sharedInstance: TaskController {
+    struct Static {
+        static var instance: TaskController?
+        static var token: dispatch_once_t = 0
         }
         
-        dispatch_once(&Static.token)
-        {
+        dispatch_once(&Static.token) {
             Static.instance = TaskController()
         }
         
