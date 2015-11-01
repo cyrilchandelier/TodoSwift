@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C90DC5757CEBBC3B93205455FD18C78F9934C9A8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C90DC5757CEBBC3B93205455FD18C78F9934C9A8" : 0,
+    "5BCDCFE434E85D2DDAFC9036D98D3B60D49CE069" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BBCDA326-1520-4F12-89E0-6D0332F35EF1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C90DC5757CEBBC3B93205455FD18C78F9934C9A8" : "TodoSwift\/",
+    "5BCDCFE434E85D2DDAFC9036D98D3B60D49CE069" : "..\/bbs\/betc_vuitton_city_guide"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TodoSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Code\/TodoSwift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bigbossstudio.git.beanstalkapp.com:\/bigbossstudio\/betc_vuitton_city_guide.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5BCDCFE434E85D2DDAFC9036D98D3B60D49CE069"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cyrilchandelier\/TodoSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C90DC5757CEBBC3B93205455FD18C78F9934C9A8"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  TodoSwift
+
+  Created by Cyril Chandelier on 01/11/15.
+  Copyright © 2015 Cyril Chandelier. All rights reserved.
+*/
+
+"todo_list.item_left" = " item left";
+"todo_list.items_left" = " items left";

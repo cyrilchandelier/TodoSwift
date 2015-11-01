@@ -23,6 +23,11 @@
 		0034ADBF1BE62B63002E5334 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034ADBE1BE62B63002E5334 /* TaskService.swift */; };
 		0034ADC11BE62C41002E5334 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034ADC01BE62C41002E5334 /* CoreDataController.swift */; };
 		0034ADC41BE6359B002E5334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0034ADC61BE6359B002E5334 /* Localizable.strings */; };
+		0034ADCD1BE65DA5002E5334 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034ADCC1BE65DA5002E5334 /* NotificationCenter.framework */; };
+		0034ADD01BE65DA5002E5334 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034ADCF1BE65DA5002E5334 /* TodayViewController.swift */; };
+		0034ADD31BE65DA5002E5334 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0034ADD11BE65DA5002E5334 /* MainInterface.storyboard */; };
+		0034ADD71BE65DA5002E5334 /* TodoSwift Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0034ADCB1BE65DA5002E5334 /* TodoSwift Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		00ABFFB41BE663A10000A8E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFFB31BE663A10000A8E0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0034AD841BE4C612002E5334;
 			remoteInfo = TodoSwiftKit;
+		};
+		0034ADD51BE65DA5002E5334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0034AD441BE4C5BE002E5334 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0034ADCA1BE65DA5002E5334;
+			remoteInfo = "TodoSwift Today Extension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -45,6 +57,17 @@
 				0034AD9B1BE4C612002E5334 /* TodoSwiftKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0034ADDB1BE65DA5002E5334 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0034ADD71BE65DA5002E5334 /* TodoSwift Today Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -68,6 +91,14 @@
 		0034ADBE1BE62B63002E5334 /* TaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		0034ADC01BE62C41002E5334 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		0034ADC51BE6359B002E5334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0034ADCB1BE65DA5002E5334 /* TodoSwift Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TodoSwift Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0034ADCC1BE65DA5002E5334 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0034ADCF1BE65DA5002E5334 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0034ADD21BE65DA5002E5334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0034ADD41BE65DA5002E5334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00ABFFB11BE6634D0000A8E0 /* TodoSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodoSwift.entitlements; sourceTree = "<group>"; };
+		00ABFFB21BE663760000A8E0 /* TodoSwift Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TodoSwift Today Extension.entitlements"; sourceTree = "<group>"; };
+		00ABFFB31BE663A10000A8E0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +118,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0034ADC81BE65DA5002E5334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034ADCD1BE65DA5002E5334 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				0034AD4E1BE4C5BE002E5334 /* TodoSwift */,
+				0034ADCE1BE65DA5002E5334 /* TodoSwift Today Extension */,
 				0034AD861BE4C612002E5334 /* TodoSwiftKit */,
 				0034ADBD1BE62331002E5334 /* Frameworks */,
 				0034AD4D1BE4C5BE002E5334 /* Products */,
@@ -105,6 +145,7 @@
 			children = (
 				0034AD4C1BE4C5BE002E5334 /* TodoSwift.app */,
 				0034AD851BE4C612002E5334 /* TodoSwiftKit.framework */,
+				0034ADCB1BE65DA5002E5334 /* TodoSwift Today Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +161,7 @@
 				0034AD5B1BE4C5BE002E5334 /* LaunchScreen.storyboard */,
 				0034AD5E1BE4C5BE002E5334 /* Info.plist */,
 				0034ADC61BE6359B002E5334 /* Localizable.strings */,
+				00ABFFB11BE6634D0000A8E0 /* TodoSwift.entitlements */,
 			);
 			path = TodoSwift;
 			sourceTree = "<group>";
@@ -142,8 +184,21 @@
 			isa = PBXGroup;
 			children = (
 				0034ADBB1BE6232C002E5334 /* CoreData.framework */,
+				0034ADCC1BE65DA5002E5334 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0034ADCE1BE65DA5002E5334 /* TodoSwift Today Extension */ = {
+			isa = PBXGroup;
+			children = (
+				00ABFFB21BE663760000A8E0 /* TodoSwift Today Extension.entitlements */,
+				0034ADCF1BE65DA5002E5334 /* TodayViewController.swift */,
+				0034ADD11BE65DA5002E5334 /* MainInterface.storyboard */,
+				0034ADD41BE65DA5002E5334 /* Info.plist */,
+				00ABFFB31BE663A10000A8E0 /* Localizable.strings */,
+			);
+			path = "TodoSwift Today Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,11 +223,13 @@
 				0034AD491BE4C5BE002E5334 /* Frameworks */,
 				0034AD4A1BE4C5BE002E5334 /* Resources */,
 				0034AD9F1BE4C612002E5334 /* Embed Frameworks */,
+				0034ADDB1BE65DA5002E5334 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				0034AD991BE4C612002E5334 /* PBXTargetDependency */,
+				0034ADD61BE65DA5002E5334 /* PBXTargetDependency */,
 			);
 			name = TodoSwift;
 			productName = TodoSwift;
@@ -197,6 +254,23 @@
 			productReference = 0034AD851BE4C612002E5334 /* TodoSwiftKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		0034ADCA1BE65DA5002E5334 /* TodoSwift Today Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0034ADD81BE65DA5002E5334 /* Build configuration list for PBXNativeTarget "TodoSwift Today Extension" */;
+			buildPhases = (
+				0034ADC71BE65DA5002E5334 /* Sources */,
+				0034ADC81BE65DA5002E5334 /* Frameworks */,
+				0034ADC91BE65DA5002E5334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TodoSwift Today Extension";
+			productName = "TodoSwift Today Extension";
+			productReference = 0034ADCB1BE65DA5002E5334 /* TodoSwift Today Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,9 +283,24 @@
 				TargetAttributes = {
 					0034AD4B1BE4C5BE002E5334 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = FTXBJFN89Y;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0034AD841BE4C612002E5334 = {
 						CreatedOnToolsVersion = 7.1;
+					};
+					0034ADCA1BE65DA5002E5334 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = FTXBJFN89Y;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -230,6 +319,7 @@
 			targets = (
 				0034AD4B1BE4C5BE002E5334 /* TodoSwift */,
 				0034AD841BE4C612002E5334 /* TodoSwiftKit */,
+				0034ADCA1BE65DA5002E5334 /* TodoSwift Today Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +340,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0034ADC91BE65DA5002E5334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034ADD31BE65DA5002E5334 /* MainInterface.storyboard in Resources */,
+				00ABFFB41BE663A10000A8E0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +377,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0034ADC71BE65DA5002E5334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034ADD01BE65DA5002E5334 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -285,6 +392,11 @@
 			isa = PBXTargetDependency;
 			target = 0034AD841BE4C612002E5334 /* TodoSwiftKit */;
 			targetProxy = 0034AD981BE4C612002E5334 /* PBXContainerItemProxy */;
+		};
+		0034ADD61BE65DA5002E5334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0034ADCA1BE65DA5002E5334 /* TodoSwift Today Extension */;
+			targetProxy = 0034ADD51BE65DA5002E5334 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,6 +423,14 @@
 				0034ADC51BE6359B002E5334 /* Base */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		0034ADD11BE65DA5002E5334 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0034ADD21BE65DA5002E5334 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -401,11 +521,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TodoSwift/TodoSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TodoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cyrilchandelier.todo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -413,11 +537,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TodoSwift/TodoSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TodoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cyrilchandelier.todo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -464,6 +592,36 @@
 			};
 			name = Release;
 		};
+		0034ADD91BE65DA5002E5334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TodoSwift Today Extension/TodoSwift Today Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "TodoSwift Today Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cyrilchandelier.todo-swift.today-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0034ADDA1BE65DA5002E5334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TodoSwift Today Extension/TodoSwift Today Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "TodoSwift Today Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cyrilchandelier.todo-swift.today-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,6 +648,15 @@
 			buildConfigurations = (
 				0034AD9D1BE4C612002E5334 /* Debug */,
 				0034AD9E1BE4C612002E5334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0034ADD81BE65DA5002E5334 /* Build configuration list for PBXNativeTarget "TodoSwift Today Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0034ADD91BE65DA5002E5334 /* Debug */,
+				0034ADDA1BE65DA5002E5334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

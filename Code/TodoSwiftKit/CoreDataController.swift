@@ -27,9 +27,7 @@ public class CoreDataController
     // MARK: - Core Data stack
     
     private lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.cyrilchandelier.TodoSwift" in the application's documents Application Support directory.
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1]
+        return NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.com.cyrilchandelier.todo-swift")!
     }()
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
