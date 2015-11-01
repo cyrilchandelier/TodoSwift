@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  TodoSwift
+
+  Created by Cyril Chandelier on 01/11/15.
+  Copyright © 2015 Cyril Chandelier. All rights reserved.
+*/
+
+// Todo List
+"todo_list.item_left" = " item left";
+"todo_list.items_left" = " items left";
+"todo_list.task_placeholder" = "What needs to be done?";
+"todo_list.filter.all" = "All";
+"todo_list.filter.active" = "Active";
+"todo_list.filter.completed" = "Completed";
