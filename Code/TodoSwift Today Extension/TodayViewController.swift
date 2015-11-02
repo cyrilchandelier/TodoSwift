@@ -44,4 +44,8 @@ class TodayViewController: UIViewController, NCWidgetProviding
         return UIEdgeInsetsZero
     }
     
+    @IBAction func widgetTouched()
+    {
+        self.extensionContext?.openURL(NSURL(string: "todoswift://wakeup")!, completionHandler: nil)
+    }
 }
