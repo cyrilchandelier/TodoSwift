@@ -29,13 +29,16 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What needs to be done?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-mf-ILF">
                                     <rect key="frame" x="72" y="0.0" width="518" height="60"/>
                                     <animations/>
+                                    <accessibility key="accessibilityConfiguration" hint="Type text and return to add a task" identifier="add_task_textfield" label="Create a new task">
+                                        <accessibilityTraits key="traits" none="YES"/>
+                                    </accessibility>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="dbp-zm-GLf"/>
                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="kfy-Z0-PzV"/>
                                         <constraint firstAttribute="height" constant="60" id="veA-Yn-HH5"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     <connections>
                                         <outlet property="delegate" destination="Jn4-eo-HUF" id="Hc0-q1-uLS"/>
                                     </connections>
@@ -87,6 +90,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY3-7G-XtE">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <animations/>
+                                            <accessibility key="accessibilityConfiguration" identifier="mark_as_completed_button" label="Mark as completed"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="tai-Kb-cBT"/>
                                             </constraints>
@@ -107,7 +111,7 @@
                                             <animations/>
                                             <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <outlet property="delegate" destination="8hk-bM-jF5" id="Jl5-2m-nwS"/>
                                             </connections>
@@ -129,7 +133,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEQ-08-rtx">
-                                            <rect key="frame" x="0.0" y="58.5" width="600" height="1"/>
+                                            <rect key="frame" x="0.0" y="59" width="600" height="1"/>
                                             <animations/>
                                             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>

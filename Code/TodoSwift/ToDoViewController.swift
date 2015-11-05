@@ -33,6 +33,10 @@ class ToDoViewController: UITableViewController, NSFetchedResultsControllerDeleg
     {
         super.viewDidLoad()
         
+        // Accessibility
+        tableView.accessibilityLabel = "Tasks list"
+        taskTextField.accessibilityLabel = "Create a new task"
+        
         // Background color
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_pattern")!)
         
