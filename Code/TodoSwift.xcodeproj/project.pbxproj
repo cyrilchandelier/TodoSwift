@@ -27,7 +27,7 @@
 		0034ADD01BE65DA5002E5334 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034ADCF1BE65DA5002E5334 /* TodayViewController.swift */; };
 		0034ADD31BE65DA5002E5334 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0034ADD11BE65DA5002E5334 /* MainInterface.storyboard */; };
 		0034ADD71BE65DA5002E5334 /* TodoSwift Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0034ADCB1BE65DA5002E5334 /* TodoSwift Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		004565E31BEBAEB400B426A6 /* TodoSwift_UI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004565E21BEBAEB400B426A6 /* TodoSwift_UI_Tests.swift */; };
+		004565E31BEBAEB400B426A6 /* TodoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004565E21BEBAEB400B426A6 /* TodoSwiftUITests.swift */; };
 		004566C21BECC46200B426A6 /* TodoSwiftAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 004566C11BECC46200B426A6 /* TodoSwiftAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		004566C61BECC46200B426A6 /* TodoSwiftAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004566BF1BECC46200B426A6 /* TodoSwiftAccessibility.framework */; };
 		004566C71BECC46200B426A6 /* TodoSwiftAccessibility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 004566BF1BECC46200B426A6 /* TodoSwiftAccessibility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -125,7 +125,7 @@
 		0034ADD21BE65DA5002E5334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		0034ADD41BE65DA5002E5334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004565E01BEBAEB300B426A6 /* TodoSwift UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TodoSwift UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		004565E21BEBAEB400B426A6 /* TodoSwift_UI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSwift_UI_Tests.swift; sourceTree = "<group>"; };
+		004565E21BEBAEB400B426A6 /* TodoSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSwiftUITests.swift; sourceTree = "<group>"; };
 		004565E41BEBAEB400B426A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004566BF1BECC46200B426A6 /* TodoSwiftAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TodoSwiftAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		004566C11BECC46200B426A6 /* TodoSwiftAccessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoSwiftAccessibility.h; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		004565E11BEBAEB300B426A6 /* TodoSwift UI Tests */ = {
 			isa = PBXGroup;
 			children = (
-				004565E21BEBAEB400B426A6 /* TodoSwift_UI_Tests.swift */,
+				004565E21BEBAEB400B426A6 /* TodoSwiftUITests.swift */,
 				004565E41BEBAEB400B426A6 /* Info.plist */,
 			);
 			path = "TodoSwift UI Tests";
@@ -543,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004565E31BEBAEB400B426A6 /* TodoSwift_UI_Tests.swift in Sources */,
+				004565E31BEBAEB400B426A6 /* TodoSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,6 +947,7 @@
 				004566CA1BECC46200B426A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

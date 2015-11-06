@@ -38,6 +38,7 @@ class ToDoViewController: UITableViewController, NSFetchedResultsControllerDeleg
         // Accessibility
         tableView.accessibilityLabel = Accessibility.TaskList.localizedLabel
         taskTextField.accessibilityLabel = Accessibility.CreateNewTaskTextField.localizedLabel
+        clearBarButtonItem.accessibilityLabel = Accessibility.ClearCompletedTasksButton.localizedLabel
         
         // Background color
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_pattern")!)

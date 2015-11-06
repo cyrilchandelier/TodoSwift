@@ -44,7 +44,14 @@ public class CoreDataController
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            let storeType: String
+            print(NSProcessInfo.processInfo().environment)
+            if let _ = NSProcessInfo.processInfo().environment["UITests"] {
+                storeType = NSInMemoryStoreType
+            } else {
+                storeType = NSSQLiteStoreType
+            }
+            try coordinator.addPersistentStoreWithType(storeType, configuration: nil, URL: url, options: nil)
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()

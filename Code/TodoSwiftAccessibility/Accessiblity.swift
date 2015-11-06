@@ -14,22 +14,25 @@ public enum Accessibility
     case TaskList
     case CreateNewTaskTextField
     case MarkAsCompletedButton(String)
+    case ClearCompletedTasksButton
     
     public var localizedLabel: String {
         switch self {
         case .TaskList:
-            return localized("accessibility.todo_list.tasks_list", comment: "Accessibility label for the list of tasks")
+            return localize("accessibility.todo_list.tasks_list")
         case .CreateNewTaskTextField:
-            return localized("accessibility.todo_list.create_new_task_textfield", comment: "Accessibility label for the new task text field")
+            return localize("accessibility.todo_list.create_new_task_textfield")
         case .MarkAsCompletedButton(let task):
-            return String(format: localized("accessibility.todo_list.mark_as_completed_button", comment: "Accessibility label for the button that marks as task as completed"), task)
+            return String(format: localize("accessibility.todo_list.mark_as_completed_button"), task)
+        case .ClearCompletedTasksButton:
+            return localize("accessibility.todo_list.clear_completed_tasks")
         }
     }
     
-    private func localized(key: String, comment: String) -> String
+    private func localize(key: String) -> String
     {
         guard let bundle = NSBundle(identifier: "com.cyrilchandelier.TodoSwiftAccessibility") else {
-            return ""
+            return key
         }
         
         return bundle.localizedStringForKey(key, value: nil, table: nil)
