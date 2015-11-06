@@ -8,8 +8,10 @@
 
 import UIKit
 import TodoSwiftKit
+import TodoSwiftAccessibility
 
 let ToDoCellIdentifier = "ToDoCellID"
+
 
 class ToDoCell: UITableViewCell, UITextFieldDelegate
 {
@@ -43,6 +45,9 @@ class ToDoCell: UITableViewCell, UITextFieldDelegate
         
         // Set content
         contentTextField.text = task.label
+        
+        // Accessibility
+        completionButton.accessibilityLabel = Accessibility.MarkAsCompletedButton(task.label).localizedLabel
     }
     
     // MARK: - UI Actions

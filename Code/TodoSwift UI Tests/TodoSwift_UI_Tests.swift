@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import TodoSwiftAccessibility
 
 
 class TodoSwift_UI_Tests: XCTestCase
@@ -30,20 +31,37 @@ class TodoSwift_UI_Tests: XCTestCase
     func testThatClearingCompletedTasksWorks()
     {
         let app = XCUIApplication()
+        let task = "Say hello"
         
         // Find the text field and enter some task text
-        let whatNeedsToBeDoneTextField = app.tables["Tasks list"].textFields["Create a new task"]
+        let whatNeedsToBeDoneTextField = app.tables[Accessibility.TaskList.localizedLabel].textFields[Accessibility.CreateNewTaskTextField.localizedLabel]
         whatNeedsToBeDoneTextField.tap()
-        whatNeedsToBeDoneTextField.typeText("Say Hello")
+        whatNeedsToBeDoneTextField.typeText(task)
         app.buttons["Done"].tap()
         XCTAssertEqual(app.tables.cells.count, 1)
         
         // Mark task as completed
-        app.tables.buttons["Mark as completed"].tap()
+        app.tables.buttons[Accessibility.MarkAsCompletedButton(task).localizedLabel].tap()
         XCTAssertEqual(app.tables.cells.count, 1)
         
         // Remove task
         app.navigationBars["TodoSwift.ToDoView"].buttons["Delete"].tap()
+        XCTAssertEqual(app.tables.cells.count, 0)
+    }
+    
+    func testThatEmptyStringsDontCreateTasks()
+    {
+        let app = XCUIApplication()
+        
+        // Find the text field and enter some task text
+        let whatNeedsToBeDoneTextField = app.tables[Accessibility.TaskList.localizedLabel].textFields[Accessibility.CreateNewTaskTextField.localizedLabel]
+        whatNeedsToBeDoneTextField.tap()
+        whatNeedsToBeDoneTextField.typeText("")
+        app.buttons["Done"].tap()
+        XCTAssertEqual(app.tables.cells.count, 0)
+        whatNeedsToBeDoneTextField.tap()
+        whatNeedsToBeDoneTextField.typeText("   ")
+        app.buttons["Done"].tap()
         XCTAssertEqual(app.tables.cells.count, 0)
     }
 }

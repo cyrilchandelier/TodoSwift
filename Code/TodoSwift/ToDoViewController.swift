@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import TodoSwiftKit
+import TodoSwiftAccessibility
+
 
 class ToDoViewController: UITableViewController, NSFetchedResultsControllerDelegate, UITextFieldDelegate, ToDoCellDelegate
 {
@@ -34,8 +36,8 @@ class ToDoViewController: UITableViewController, NSFetchedResultsControllerDeleg
         super.viewDidLoad()
         
         // Accessibility
-        tableView.accessibilityLabel = "Tasks list"
-        taskTextField.accessibilityLabel = "Create a new task"
+        tableView.accessibilityLabel = Accessibility.TaskList.localizedLabel
+        taskTextField.accessibilityLabel = Accessibility.CreateNewTaskTextField.localizedLabel
         
         // Background color
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_pattern")!)
